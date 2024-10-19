@@ -215,6 +215,10 @@ void loop()
   {
     Temp_show();
   }
+  else if (MODE == 7)
+  {
+    Temp_show();
+  }
 }
 void select_mode(int n)
 {
@@ -283,6 +287,15 @@ void select_mode(int n)
       u8g2.print(F("Acceleration")); // write something to the internal memory
     } while (u8g2.nextPage());
     break;
+  case 7:
+      u8g2.firstPage();
+      do
+      {
+        u8g2.setFont(u8g2_font_t0_16b_mr);
+        u8g2.setCursor(44, 48);
+        u8g2.print(F("Animation")); // Display the animation label
+      } while (u8g2.nextPage());
+      break;
   }
 }
 
